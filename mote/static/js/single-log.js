@@ -1,4 +1,4 @@
-/*
+﻿/*
 #
 # Copyright © 2015-2016 Chaoyi Zha <cydrobolt@fedoraproject.org>
 #
@@ -32,8 +32,18 @@ function loadLogContents() {
         var markup;
         markup = res;
         $('.logdisplay').html(markup);
+        var tms = document.getElementsByClassName("tm");
+        var lineNum = location.hash.split('-')[1];
+        var navBarHeight = $('nav').height();
+
+ 	    var line = tms[lineNum];
+        $line = $(line);
+        
+        $('body, html').animate({
+             scrollTop : $line.offset().top -5
+            });
         return true;
-    });
+        });
     return true;
 }
 
